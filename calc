@@ -1,0 +1,26 @@
+#!/bin/bash
+# Simple calculator
+
+echo "Please give me the first number" && read num1
+echo "Please give me the second number" && read num2
+echo "=================="
+echo "What calculation you want to perform? Select the proper number:"
+echo "1: Addition"
+echo "2: Substraction"
+echo "3: Multiplication"
+echo "4: Division"
+echo "Select calculation:" && read calc
+
+if [[ $calc == "1" ]]; then
+	result=$(expr $num1 + $num2)
+elif [[ $calc == "2" ]]; then
+	result=$(expr $num1 - $num2)
+elif [[ $calc == "3" ]]; then
+	result=$(expr $num1 \* $num2)
+elif [[ $calc == "4" ]]; then
+	result=$(expr $num1 / $num2)
+else
+	echo "You chose wrong" && exit 1;
+fi
+echo "=============="
+echo "The result is $result"
